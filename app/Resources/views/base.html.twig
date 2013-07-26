@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>{% block title %}Flying Feet 5{% endblock %}</title>
+		{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/flyingfeet/css/style.css') }}" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{{ asset('bundles/flyingfeet/css/superfish.css') }}" media="screen" />
+		{% endblock %}
+
+		{% block javascript %}
+        <script type="text/javascript" src="{{ asset('bundles/flyingfeet/js/custom.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/flyingfeet/js/hoverIntent.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/flyingfeet/js/superfish.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/flyingfeet/js/supersubs.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/flyingfeet/js/jquery.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                $("ul#togbox").hover(function() {
+                    $("li#panel").slideToggle("slow");
+                });
+            });
+            </script>
+		{% endblock %}
+
+   <link rel="icon" type="image/png" href="{{ asset('bundles/flyingfeet/favicon.png') }}" />
+        </head>
+
+        <body>
+            <a name="anker"></a>
+            <div id="header">
+                <div class="wrapper">
+			{{ include('FFIndexBundle:Index:logo.html.twig') }}
+                    </div>
+                </div>
+
+                <!-- NAVIGATION -->
+                <div id="menu">
+                    <div id="menu-holder">
+                        <div class="wrapper">
+                            <!-- Navigation -->
+                            <ul id="nav" class="sf-menu">
+                                <li {% block arrowHome %} {% endblock %}><a href="{{ path('home') }}">Startseite<span class="subheader">Willkommen</span></a></li>
+                                <li {% block arrowFF %} {% endblock %}><a href="#">Flying Feet<span class="subheader">Tanzformation</span></a>
+                                    <ul>
+                                        <li><a href="#"><span> Informationen</span></a></li>
+                                        <li><a href="#"><span> Bilder</span></a></li>
+                                        <li><a href="#"><span> Videos</span></a></li>
+                                        <li><a href="http://workshops.flying-feet-online.de" target="blank"><span> Workshops</span></a></li>
+                                    </ul>
+                                </li>
+                                <li {% block arrowContact %} {% endblock %}><a href="#">Kontakt<span class="subheader">Fragen?</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAIN -->
+                <div id="main">
+                    <div class="wrapper">
+                        <div class="clear"></div>
+                        <div id="page-title">
+				{% block pageTitle %} {% endblock %}
+                            </div>
+                            <!--
+                            <div id="headline">
+				{% block headline %} {% endblock %}
+                            </div>
+                            -->	
+                            <div id="content">
+                                <div id="page-content">
+					{% block body %}{% endblock %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FOOTER -->
+                        <div id="footer">
+                            <div class="wrapper">
+                                <ul id="footer-cols">
+                                    <li class="col">
+                                        <h6>Sitemap</h6>
+                                        <ul id="togbox">
+                                            <li class="page_item"><a href="{{ path('home') }}">Startseite</a></li>
+                                            <li class="page_item"><a href="#">Flying Feet</a></li>
+                                            <li class="subpage_item" id="panel"><a href="#">Informationen</a></li>
+                                            <li class="subpage_item" id="panel"><a href="#">Bilder</a></li>
+                                            <li class="subpage_item" id="panel"><a href="#">Videos</a></li>
+                                            <li class="subpage_item" id="panel"><a href="http://workshops.flying-feet-online.de" target="blank">Workshops</a></li>
+                                            <li class="page_item"><a href="#">Kontakt</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="col">
+                                        <h6>Partner/Empfehlungen</h6>
+                                        <ul>
+                                            <li><a href="http://www.tanzschule-gutmann.de/freiburg" target="_blank"><img src="{{ asset('bundles/flyingfeet/images/outgoing_link.png') }}" /> Tanzschule Gutmann Freiburg</a></li>
+                                            <li><a href="http://www.tanzschule-gutmann.de/karlsruhe" target="_blank"><img src="{{ asset('bundles/flyingfeet/images/outgoing_link.png') }}" /> Tanzschule Gutmann Karlsruhe</a></li>
+                                            <li><a href="http://workshops.flying-feet-online.de/" target="_blank"><img src="{{ asset('bundles/flyingfeet/images/outgoing_link.png') }}" /> Flying Feet Workshops</a></li>
+                                            <li><a href="http://www.euro-dance-festival.de/" target="_blank"><img src="{{ asset('bundles/flyingfeet/images/outgoing_link.png') }}" /> Euro Dance Festival</a></li>
+                                            <li><a href="http://www.tanzfm.de/" target="_blank"><img src="{{ asset('bundles/flyingfeet/images/outgoing_link.png') }}" /> Tanzfm.de</a></li>
+                                            <li><a href="http://www.dancephotos.ch/" target="_blank"><img src="{{ asset('bundles/flyingfeet/images/outgoing_link.png') }}" /> Dancephotos.ch</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="col">
+                                        <h6>&Uuml;ber</h6>
+                                        Hier findest du alles zum Thema Tanzen. Moment noch nicht, aber habe bitte Geduld. Einfach wieder vorbei schauen :)
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- BOTTOM -->
+                        <div id="bottom">
+                            <div class="wrapper">
+                                <div id="bottom-text">&copy; Copyright by Markus Klein -<a href="#"> Impressum</a> </div>
+                                <!-- Social -->
+                                <ul class="social ">
+                                    <li><a href="#" class="poshytip email" title="Schicke eine E-Mail"></a></li>
+                                    <li><a href="https://www.facebook.com/pages/Flying-Feet/183635011660891" class="poshytip  facebook" title="Werde ein Fan" target="blank"></a></li>
+                                    <li><a href="http://www.youtube.com/user/Maggus84" class="poshytip youtube" title="Schau dir unsere Videos an" target="blank"></a></li>
+                                </ul>
+                                <a href="#anker"><div id="to-top" class="poshytip" title="To top"></div></a>
+                            </div>
+                        </div>	
+                    </body>
+                </html>
+

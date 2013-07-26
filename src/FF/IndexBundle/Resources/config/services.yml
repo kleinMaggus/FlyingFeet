@@ -1,0 +1,7 @@
+parameters:
+#    ff_index.example.class: FF\IndexBundle\Example
+
+services:
+#    ff_index.example:
+#        class: %ff_index.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
