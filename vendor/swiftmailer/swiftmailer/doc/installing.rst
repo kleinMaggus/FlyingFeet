@@ -68,7 +68,7 @@ the ``tar`` command.
     Swift-4.0.0-dev/tests/unit/Swift/Transport/StreamBufferTest.php
     $ cd Swift-4.0.0-dev
     $ ls
-    CHANGES LICENSE ...
+    CHANGES		LICENSE.GPL	LICENSE.LGPL	README		VERSION		examples	lib		test-suite	tests
     $
 
 Installing from Git
@@ -122,7 +122,8 @@ OS X.
     Checking out files: 100% (1847/1847), done.
     $ cd swiftmailer/
     $ ls
-    CHANGES LICENSE ...
+    CHANGES		LICENSE.LGPL	README.git	VERSION		docs		lib		test-suite	util
+    LICENSE.GPL	README		TODO		build.xml	examples	notes		tests
     $
 
 Uploading to your Host
