@@ -14,4 +14,12 @@ class IndexController extends Controller
     {
         return $this->render('FFIndexBundle:Index:index.html.twig');
     }
+
+    /**
+     * @Route("/impressum", name="impressum")
+     */
+    public function impressumAction()
+    {
+        return $this->render('FFIndexBundle:Index:impressum.html.twig');
+    }
 }
